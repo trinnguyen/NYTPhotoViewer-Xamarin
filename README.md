@@ -1,8 +1,11 @@
-# NYTPhotoViewer-Xamarin
-Xamarin.iOS Binding Library for NYTPhotoViewer
+# NYTPhotoViewer for Xamarin.iOS
+
+[![NuGet version](https://badge.fury.io/nu/Xamarin.NYTPhotoViewer.svg)](https://badge.fury.io/nu/Xamarin.NYTPhotoViewer)
 
 - Latest release of NYTPhotoViewer
 - Support loading remote image with FFImageLoading
+- Nuget: https://www.nuget.org/packages/Xamarin.NYTPhotoViewer
+
 
 ## Orignal library
 https://github.com/NYTimes/NYTPhotoViewer
