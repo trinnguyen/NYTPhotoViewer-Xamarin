@@ -6,17 +6,19 @@
 - Support loading remote image with FFImageLoading
 - Nuget: https://www.nuget.org/packages/Xamarin.NYTPhotoViewer
 
-`Install-Package Xamarin.NYTPhotoViewer`
+```
+Install-Package Xamarin.NYTPhotoViewer
+```
 
 ## Orignal library
 https://github.com/NYTimes/NYTPhotoViewer
 
 ## Usage
 ```
-_dataSource = CreatePhotoDatasource();
-_controller = new NYTPhotosViewController(_dataSource, 0, null);
-_controller.WeakDelegate = this;
-PresentViewController(_controller, true, null);
+NYTPhotoViewerArrayDataSource dataSource = CreatePhotoDatasource();
+NYTPhotosViewController controller = new NYTPhotosViewController(_dataSource, 0, null);
+controller.WeakDelegate = this;
+PresentViewController(controller, true, null);
 ```
 
 - Checkout the Demo project to learn more
