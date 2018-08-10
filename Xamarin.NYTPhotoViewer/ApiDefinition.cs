@@ -268,7 +268,7 @@ namespace Xamarin.NYTPhotoViewer
 
     // @interface NYTPhotoViewerArrayDataSource : NSObject <NYTPhotoViewerDataSource, NSFastEnumeration>
     [BaseType(typeof(NSObject))]
-    interface NYTPhotoViewerArrayDataSource : INYTPhotoViewerDataSource//, NSFastEnumeration
+    interface NYTPhotoViewerArrayDataSource : NYTPhotoViewerDataSource//, NSFastEnumeration
     {
         // @property (readonly, nonatomic) NSArray<id<NYTPhoto>> * _Nonnull photos;
         [Export("photos")]
@@ -292,7 +292,7 @@ namespace Xamarin.NYTPhotoViewer
     // @interface NYTPhotoViewerSinglePhotoDataSource : NSObject <NYTPhotoViewerDataSource>
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
-    interface NYTPhotoViewerSinglePhotoDataSource : INYTPhotoViewerDataSource
+    interface NYTPhotoViewerSinglePhotoDataSource : NYTPhotoViewerDataSource
     {
         // @property (readonly, nonatomic) id<NYTPhoto> _Nonnull photo;
         [Export("photo")]
@@ -425,12 +425,12 @@ namespace Xamarin.NYTPhotoViewer
 
         // -(instancetype _Nonnull)initWithDataSource:(id<NYTPhotoViewerDataSource> _Nonnull)dataSource initialPhotoIndex:(NSInteger)initialPhotoIndex delegate:(id<NYTPhotosViewControllerDelegate> _Nullable)delegate;
         [Export("initWithDataSource:initialPhotoIndex:delegate:")]
-        IntPtr Constructor(INYTPhotoViewerDataSource dataSource, nint initialPhotoIndex, [NullAllowed] NYTPhotosViewControllerDelegate @delegate);
+        IntPtr Constructor(INYTPhotoViewerDataSource dataSource, nint initialPhotoIndex, [NullAllowed] INYTPhotosViewControllerDelegate @delegate);
 
         // -(instancetype _Nonnull)initWithDataSource:(id<NYTPhotoViewerDataSource> _Nonnull)dataSource initialPhoto:(id<NYTPhoto> _Nullable)initialPhoto delegate:(id<NYTPhotosViewControllerDelegate> _Nullable)delegate __attribute__((objc_designated_initializer));
         [Export("initWithDataSource:initialPhoto:delegate:")]
         [DesignatedInitializer]
-        IntPtr Constructor(INYTPhotoViewerDataSource dataSource, [NullAllowed] NYTPhoto initialPhoto, [NullAllowed] NYTPhotosViewControllerDelegate @delegate);
+        IntPtr Constructor(INYTPhotoViewerDataSource dataSource, [NullAllowed] NYTPhoto initialPhoto, [NullAllowed] INYTPhotosViewControllerDelegate @delegate);
 
         // -(void)displayPhoto:(id<NYTPhoto> _Nullable)photo animated:(BOOL)animated;
         [Export("displayPhoto:animated:")]
@@ -448,6 +448,8 @@ namespace Xamarin.NYTPhotoViewer
         [Export("reloadPhotosAnimated:")]
         void ReloadPhotosAnimated(bool animated);
     }
+
+    interface INYTPhotosViewControllerDelegate{}
 
     // @protocol NYTPhotosViewControllerDelegate <NSObject>
     [Protocol, Model]
