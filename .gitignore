@@ -42,3 +42,4 @@ Thumbs.db
 
 # frameoworks binaries
 Xamarin.NYTPhotoViewer/frameworks/
+*.nupkg
