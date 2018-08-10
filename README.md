@@ -6,7 +6,7 @@
 - Support loading remote image with FFImageLoading
 - Nuget: https://www.nuget.org/packages/Xamarin.NYTPhotoViewer
 
-`dotnet add package Xamarin.NYTPhotoViewer`
+`Install-Package Xamarin.NYTPhotoViewer`
 
 ## Orignal library
 https://github.com/NYTimes/NYTPhotoViewer
