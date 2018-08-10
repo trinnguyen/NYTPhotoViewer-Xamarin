@@ -14,7 +14,7 @@ Install-Package Xamarin.NYTPhotoViewer
 https://github.com/NYTimes/NYTPhotoViewer
 
 ## Usage
-```
+```csharp
 NYTPhotoViewerArrayDataSource dataSource = CreatePhotoDatasource();
 NYTPhotosViewController controller = new NYTPhotosViewController(_dataSource, 0, null);
 controller.WeakDelegate = this;
